@@ -20,6 +20,14 @@ test:
   <<: *default
   database: db/test.sqlite3
 
+# Ensure config/database.yml is using the postgresql adapter and change:
+# Used to be:
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
+
+#So added in the 'adapter' setting
 production:
   <<: *default
+  adapter: postgresql
   database: db/production.sqlite3
